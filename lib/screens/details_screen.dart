@@ -1,12 +1,15 @@
-import 'package:cats_breeds/breeds/breeds_cubit.dart';
 import 'package:cats_breeds/widgets/details_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../breeds/breeds_model.dart';
 
 class DetailsScreen extends StatelessWidget {
-  DetailsScreen({Key? key, required this.index}) : super(key: key);
-  int index;
+  DetailsScreen({
+    Key? key,
+    required this.breeds,
+  }) : super(key: key);
+  Breeds? breeds;
 
   @override
   Widget build(BuildContext context) {
@@ -27,18 +30,11 @@ class DetailsScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              BlocBuilder<BreedsCubit, BreedsState>(
-                builder: (context, state) {
-                  if (state is BreedsLoaded) {
-                    return DetailsWidget(
-                        breed: '${state.breeds?.dataList[index].breed}',
-                        country: '${state.breeds?.dataList[index].country}',
-                        coat: '${state.breeds?.dataList[index].coat}',
-                        pattern: '${state.breeds?.dataList[index].pattern}');
-                  }
-                  return Container();
-                },
-              ),
+              DetailsWidget(
+                  breed: '${breeds?.breed.toString()}',
+                  country: '${breeds?.country.toString()}',
+                  coat: '${breeds?.coat.toString()}',
+                  pattern: '${breeds?.pattern.toString()}'),
             ],
           ),
         ),

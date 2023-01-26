@@ -1,25 +1,25 @@
-class DataModel{
-  final List<Data> dataList;
+class BreedsModel{
+  final List<Breeds> dataList;
   
-  DataModel(this.dataList);
+  BreedsModel(this.dataList);
 
-  DataModel.fromJson(Map<String, dynamic> json)
+  BreedsModel.fromJson(Map<String, dynamic> json)
   : dataList = List<dynamic>.from(json['data'])
-      .map((i) => Data.fromJson(i))
+      .map((i) => Breeds.fromJson(i))
       .toList();
 
 
 }
-class Data{
+class Breeds{
   final String? breed;
   final String? country;
   final String? coat;
   final String? pattern;
 
 
-  Data(this.breed, this.country, this.coat, this.pattern);
+  Breeds(this.breed, this.country, this.coat, this.pattern);
 
-  Data.fromJson(Map<String, dynamic> json)
+  Breeds.fromJson(Map<String, dynamic> json)
       : breed = json['breed'],
         country = json['country'],
         coat = json['coat'],
