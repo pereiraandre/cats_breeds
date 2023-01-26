@@ -7,9 +7,9 @@ import '../breeds/breeds_model.dart';
 class DetailsScreen extends StatelessWidget {
   DetailsScreen({
     Key? key,
-    required this.breeds,
+    this.breeds,
   }) : super(key: key);
-  Breeds? breeds;
+  Breed? breeds;
 
   @override
   Widget build(BuildContext context) {

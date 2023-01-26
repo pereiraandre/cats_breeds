@@ -12,7 +12,7 @@ class BreedsCubit extends Cubit<BreedsState> {
   void getBreeds() async {
     emit(BreedsLoading());
     try {
-      final BreedsModel breeds = await BreedsService().getBreeds();
+      final BreedModel breeds = await BreedsService().getBreeds();
       emit(BreedsLoaded(breeds: breeds));
     } catch (e) {
       emit(BreedsError(errorMessage: e.toString()));

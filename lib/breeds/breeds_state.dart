@@ -8,7 +8,7 @@ class BreedsInitial extends BreedsState {}
 class BreedsLoading extends BreedsState {}
 
 class BreedsLoaded extends BreedsState {
-  final BreedsModel? breeds;
+  final BreedModel? breeds;
 
   BreedsLoaded({required this.breeds});
 }

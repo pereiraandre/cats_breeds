@@ -9,7 +9,7 @@ class BreedsService {
     if(catBreeds == null){
       return null;
     }
-    BreedsModel factsModel = BreedsModel.fromJson(catBreeds);
+    BreedModel factsModel = BreedModel.fromJson(catBreeds);
     return factsModel;
 
   }
