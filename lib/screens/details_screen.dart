@@ -26,16 +26,19 @@ class DetailsScreen extends StatelessWidget {
           ),
         ),
         body: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              DetailsWidget(
-                  breed: '${breeds?.breed.toString()}',
-                  country: '${breeds?.country.toString()}',
-                  coat: '${breeds?.coat.toString()}',
-                  pattern: '${breeds?.pattern.toString()}'),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.only(left: 40.0, right: 40.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                DetailsWidget(
+                    breed: '${breeds?.breed.toString()}',
+                    country: '${breeds?.country.toString()}',
+                    coat: '${breeds?.coat.toString()}',
+                    pattern: '${breeds?.pattern.toString()}'),
+              ],
+            ),
           ),
         ),
       ),
