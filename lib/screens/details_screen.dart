@@ -2,14 +2,14 @@ import 'package:cats_breeds/widgets/details_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../breeds/breeds_model.dart';
+import '../breeds/breed_model.dart';
 
 class DetailsScreen extends StatelessWidget {
   DetailsScreen({
     Key? key,
-    this.breeds,
+    required this.breed,
   }) : super(key: key);
-  Breed? breeds;
+  Breed breed;
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +33,10 @@ class DetailsScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 DetailsWidget(
-                    breed: '${breeds?.breed.toString()}',
-                    country: '${breeds?.country.toString()}',
-                    coat: '${breeds?.coat.toString()}',
-                    pattern: '${breeds?.pattern.toString()}'),
+                    breed: breed.breed.toString(),
+                    country: breed.country.toString(),
+                    coat: breed.coat.toString(),
+                    pattern: breed.pattern.toString()),
               ],
             ),
           ),

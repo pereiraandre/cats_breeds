@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:cats_breeds/networking/breeds_service.dart';
 import 'package:meta/meta.dart';
 
-import 'breeds_model.dart';
+import 'breed_model.dart';
 
 part 'breeds_state.dart';
 

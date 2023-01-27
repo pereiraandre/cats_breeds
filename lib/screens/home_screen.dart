@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
               if (state is BreedsError) {
                 Fluttertoast.showToast(
                     msg: state.errorMessage.toString(),
-                    gravity: ToastGravity.BOTTOM);
+                    gravity: ToastGravity.CENTER);
               }
             },
             bloc: BlocProvider.of<BreedsCubit>(context)..getBreeds(),
@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
                         selectedTileColor: Colors.blue,
                         title: Center(
                             child: Text(
-                          '${state.breeds?.dataList[index].breed}',
+                          '${state.breeds.dataList[index].breed}',
                           style: const TextStyle(
                               fontSize: 20.0,
                               fontWeight: FontWeight.bold,
@@ -45,11 +45,11 @@ class HomeScreen extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailsScreen(breeds: state.breeds?.dataList[index])));
+                                  builder: (context) => DetailsScreen(breed: state.breeds.dataList[index])));
                         },
                       );
                     },
-                    itemCount: state.breeds?.dataList.length ?? 0);
+                    itemCount: state.breeds.dataList.length);
               }
               return Container();
             },
