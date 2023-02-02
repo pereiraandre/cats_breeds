@@ -1,8 +1,6 @@
-import 'package:cats_breeds/widgets/details_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../breeds/breed_model.dart';
+import '../../models/breeds_model.dart';
+import '../widgets/details_widget.dart';
 
 class DetailsScreen extends StatelessWidget {
   DetailsScreen({
