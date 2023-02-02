@@ -13,14 +13,16 @@ class BreedsCubit extends Cubit<BreedsState> {
   void getBreeds() async {
     if (state is BreedsLoading) return;
 
-    var oldBreeds = <Breed>[];
+    List<Breed> oldBreeds = [];
 
     emit(BreedsLoading(oldBreeds, firstPage: page == 1));
 
     try {
       BreedModel breeds = await BreedsService().getBreeds(page);
-      page++;
       oldBreeds.addAll(breeds.dataList);
+      page++;
+
+
 
       emit(BreedsLoaded(breeds: oldBreeds));
     } catch (e) {

@@ -11,8 +11,8 @@ class NetworkHelper {
       http.Response response = await http.get(Uri.parse(url));
 
       if (response.statusCode == 200) {
-        final weatherData = jsonDecode(response.body) as Map<String, dynamic>;
-        return weatherData;
+        final breedData = jsonDecode(response.body) as Map<String, dynamic>;
+        return breedData;
       }  }
     catch (e){
       rethrow;

@@ -5,10 +5,15 @@ abstract class BreedsState {}
 
 class BreedsInitial extends BreedsState {}
 
-class BreedsLoading extends BreedsState {}
+class BreedsLoading extends BreedsState {
+  final List<Breed> oldBreeds;
+  final bool firstPage;
+
+  BreedsLoading(this.oldBreeds, {this.firstPage=false});
+}
 
 class BreedsLoaded extends BreedsState {
-  final BreedModel breeds;
+  final List<Breed> breeds;
 
   BreedsLoaded({required this.breeds});
 }
